@@ -1,0 +1,299 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>FMS</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    
+    <link href="{% static 'https://fonts.googleapis.com/css?family=Poppins:200,300,400,500,600,700,800,900&display=swap' %}" rel="stylesheet">
+    <link href="{% static 'https://fonts.googleapis.com/css?family=Playfair+Display:400,400i,500,500i,600,600i,700,700i&display=swap' %}" rel="stylesheet">
+
+    <link rel="stylesheet" href="{% static 'https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css' %}">
+ 
+    <link rel="stylesheet" href="{% static 'css/animate.css' %}">
+    
+    <link rel="stylesheet" href="{% static 'css/owl.carousel.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/owl.theme.default.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/magnific-popup.css' %}">
+
+    <link rel="stylesheet" href="{% static 'css/bootstrap-datepicker.css' %}">
+    <link rel="stylesheet" href="{% static 'css/jquery.timepicker.css' %}">
+
+    <link rel="stylesheet" href="{% static 'css/flaticon.css' %}">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+  </head>
+  <body>
+		<div class="wrap">
+			<div class="container">
+				<div class="row justify-content-between">
+						<div class="col d-flex align-items-center">
+							<p class="mb-0 phone"><span class="mailus">Phone no:</span> <a href="#">+00 1234 567</a> or <span class="mailus">email us:</span> <a href="#">emailsample@email.com</a></p>
+						</div>
+						<div class="col d-flex justify-content-end">
+							<div class="social-media">
+				    		<p class="mb-0 d-flex">
+				    			<a href="#" class="d-flex align-items-center justify-content-center"><span class="fa fa-facebook"><i class="sr-only">Facebook</i></span></a>
+				    			<a href="#" class="d-flex align-items-center justify-content-center"><span class="fa fa-twitter"><i class="sr-only">Twitter</i></span></a>
+				    			<a href="#" class="d-flex align-items-center justify-content-center"><span class="fa fa-instagram"><i class="sr-only">Instagram</i></span></a>
+				    			<a href="#" class="d-flex align-items-center justify-content-center"><span class="fa fa-dribbble"><i class="sr-only">Dribbble</i></span></a>
+				    		</p>
+			        </div>
+						</div>
+				</div>
+			</div>
+		</div>
+		<nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
+	    <div class="container">
+	    	<a class="navbar-brand" href="/"><span>FMS</span></a>
+	      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
+	        <span class="fa fa-bars"></span> Menu
+	      </button>
+	      <div class="collapse navbar-collapse" id="ftco-nav">
+	        <ul class="navbar-nav ml-auto">
+	        	<li class="nav-item"><a href="/" class="nav-link">Home</a></li>
+	        	<li class="nav-item"><a href="/about" class="nav-link">About</a></li>
+	        	<li class="nav-item active"><a href="/services" class="nav-link">Services</a></li>
+            <li class="nav-item"><a href="/contact" class="nav-link">Contact</a></li>
+			{% if user.is_authenticated %}
+			<li> Hello, {{user.first_name}} </li>
+			<li class="nav-item"><a href="/management" class="nav-link">Management</a></li>
+			<li class="nav-item"><a href="/logout" class="nav-link">Log out</a></li>
+			{% else %}
+			  <li class="nav-item"><a href="/login" class="nav-link">Log in</a></li>
+			  <li class="nav-item"><a href="/register" class="nav-link">Register</a></li>
+			  {% endif %}
+	        </ul>
+	        </ul>
+	      </div>
+	    </div>
+	  </nav>
+    <!-- END nav -->
+
+    <section class="hero-wrap hero-wrap-2" style="background-image: url('images/bg_2.jpg');" data-stellar-background-ratio="0.5">
+      <div class="overlay"></div>
+      <div class="container">
+        <div class="row no-gutters slider-text align-items-center justify-content-center">
+          <div class="col-md-9 ftco-animate text-center">
+          	<p class="breadcrumbs mb-2"><span class="mr-2"><a href="index.html">Home <i class="fa fa-chevron-right"></i></a></span> <span>Services <i class="fa fa-chevron-right"></i></span></p>
+            <h1 class="mb-0 bread">Services</h1>
+          </div>
+        </div>
+      </div>
+    </section>
+   
+    <section class="ftco-section ftco-services">
+    	<div class="container">
+    		<div class="row">
+          <div class="col-md-4 d-flex services align-self-stretch px-4 ftco-animate">
+            <div class="d-block services-wrap text-center">
+              <div class="img" style="background-image: url('{% static 'images/maps.jpg' %}');"></div>
+              <div class="media-body py-4 px-3">
+                <h3 class="heading">Map Direction</h3>
+                <p>Check you fleet where it is headed from its coordinates.</p>
+                <p><a href="/about" class="btn btn-primary">Read more</a></p>
+              </div>
+            </div>      
+          </div>
+          <div class="col-md-4 d-flex services align-self-stretch px-4 ftco-animate">
+            <div class="d-block services-wrap text-center">
+              <div class="img" style="background-image: url('{% static 'images/gps.jpg' %}');"></div>
+              <div class="media-body py-4 px-3">
+                <h3 class="heading">GPS Tracking</h3>
+                <p>Real-time monitoring of your fleet through GPS on Google Maps.</p>
+                <p><a href="/about" class="btn btn-primary">Read more</a></p>
+              </div>
+            </div>    
+          </div>
+          <div class="col-md-4 d-flex services align-self-stretch px-4 ftco-animate">
+            <div class="d-block services-wrap text-center">
+              <div class="img" style="background-image: url('{% static 'images/driverp-1.jpg' %}');"></div>
+              <div class="media-body py-4 px-3">
+                <h3 class="heading">Drivers Performance</h3>
+                <p>Drivers pattern recognition using behaviour of its driving.</p>
+                <p><a href="/about" class="btn btn-primary">Read more</a></p>
+              </div>
+            </div>      
+          </div>
+        </div>
+    	</div>
+    </section>
+
+	  <section class="ftco-section bg-light">
+			<div class="container">
+				<div class="row no-gutters">
+					<div class="col-md-6 wrap-about">
+						<div class="img img-2 mb-4" style="background-image: url('{% static 'images/about-2.jpg' %}');">
+						</div>
+						<h2>The most recommended Fleet Management System</h2>
+						<p>Managing day to day operations of fleet and logistics business can be a huge task for any fleet & transport business. With FMS, now fleet owners and managers can easily track their vehicles and drivers, analyze driver behavior and vehicle's health in real-time. FMS helps improve productivity by providing an easy way to create jobs and check the utilisation of vehicles with predicted delays in real-time and monitor the vehicle and driver's performance. </p>
+					</div>
+					<div class="col-md-6 wrap-about ftco-animate">
+	          <div class="heading-section">
+	          	<div class="pl-md-5">
+		            <h2 class="mb-2">Our Features</h2>
+	            </div>
+	          </div>
+	          <div class="pl-md-5">
+							<p></p>
+							<div class="row">
+		            <div class="services-2 col-lg-6 d-flex w-100">
+		              <div class="icon d-flex justify-content-center align-items-center">
+		            		<span class="flaticon-diet"></span>
+		              </div>
+		              <div class="media-body pl-3">
+		                <h3 class="heading">Real-Time Monitoring</h3>
+		                <p></p>
+		              </div>
+		            </div> 
+		            <div class="services-2 col-lg-6 d-flex w-100">
+		              <div class="icon d-flex justify-content-center align-items-center">
+		            		<span class="flaticon-workout"></span>
+		              </div>
+		              <div class="media-body pl-3">
+		                <h3 class="heading">Fleet Management</h3>
+		                <p></p>
+		              </div>
+		            </div>
+		            <div class="services-2 col-lg-6 d-flex w-100">
+		              <div class="icon d-flex justify-content-center align-items-center">
+		            		<span class="flaticon-diet-1"></span>
+		              </div>
+		              <div class="media-body pl-3">
+		                <h3 class="heading">GPS Tracking</h3>
+		                <p></p>
+		              </div>
+		            </div>      
+		            <div class="services-2 col-lg-6 d-flex w-100">
+		              <div class="icon d-flex justify-content-center align-items-center">
+		            		<span class="flaticon-first"></span>
+		              </div>
+		              <div class="media-body pl-3">
+		                <h3 class="heading">User-friendly UI</h3>
+		                <p></p>
+		              </div>
+		            </div>
+		            <div class="services-2 col-lg-6 d-flex w-100">
+		              <div class="icon d-flex justify-content-center align-items-center">
+		            		<span class="flaticon-first"></span>
+		              </div>
+		              <div class="media-body pl-3">
+		                <h3 class="heading">Client Dashboard</h3>
+		                <p></p>
+		              </div>
+		            </div> 
+		            <div class="services-2 col-lg-6 d-flex w-100">
+		              <div class="icon d-flex justify-content-center align-items-center">
+		            		<span class="flaticon-first"></span>
+		              </div>
+		              <div class="media-body pl-3">
+		                <h3 class="heading">Drivers Performance</h3>
+		                <p></p>
+		              </div>
+		            </div> 
+		    
+		          </div>  
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+		
+
+    
+    <footer class="footer">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-6 col-lg-3 mb-md-0 mb-4">
+						<h2 class="footer-heading"><a href="{% static '#' %}" class="logo">FMS</a></h2>
+						<p>Managing day to day operations of fleet and logistics business can be a huge task for any fleet & transport business.</p>
+						<a href="/about">Read more <span class="fa fa-chevron-right" style="{% static 'font-size: 11px' %};"></span></a>
+					</div>
+					<div class="col-md-6 col-lg-3 mb-md-0 mb-4">
+						<h2 class="footer-heading">Services</h2>
+						<ul class="list-unstyled">
+              <li><a href="{% static '#' %}" class="py-1 d-block">Real-Time Monitoring</a></li>
+              <li><a href="{% static '#' %}" class="py-1 d-block">GPS Tracking</a></li>
+              <li><a href="{% static '#' %}" class="py-1 d-block">Fleet Management</a></li>
+              <li><a href="{% static '#' %}" class="py-1 d-block">Drivers Performance</a></li>
+            </ul>
+					</div>
+					<div class="col-md-6 col-lg-3 mb-md-0 mb-4">
+						<h2 class="footer-heading">Tag us</h2>
+						<div class="tagcloud">
+	            <a href="{% static '#' %}" class="tag-cloud-link">Fms</a>
+	            <a href="{% static '#' %}" class="tag-cloud-link">GPS</a>
+	            <a href="{% static '#' %}" class="tag-cloud-link">Fleet</a>
+	            <a href="{% static '#' %}" class="tag-cloud-link">Location</a>
+	            <a href="{% static '#' %}" class="tag-cloud-link">Monitoring</a>
+	            <a href="{% static '#' %}" class="tag-cloud-link">user</a>
+	            <a href="{% static '#' %}" class="tag-cloud-link">driver</a>
+	            <a href="{% static '#' %}" class="tag-cloud-link">coordinates</a>
+	          </div>
+					</div>
+					<div class="col-md-6 col-lg-3 mb-md-0 mb-4">
+						<h2 class="footer-heading">Subcribe</h2>
+						<form action="#" class="subscribe-form">
+              <div class="form-group d-flex">
+                <input type="text" class="form-control rounded-left" placeholder="Enter email address">
+                <button type="submit" class="form-control submit rounded-right"><span class="sr-only">Submit</span><i class="fa fa-paper-plane"></i></button>
+              </div>
+            </form>
+            <h2 class="footer-heading mt-5">Follow us</h2>
+            <ul class="ftco-footer-social p-0">
+              <li class="ftco-animate"><a href="{% static '#' %}" data-toggle="tooltip" data-placement="top" title="Twitter"><span class="fa fa-twitter"></span></a></li>
+              <li class="ftco-animate"><a href="{% static '#' %}" data-toggle="tooltip" data-placement="top" title="Facebook"><span class="fa fa-facebook"></span></a></li>
+              <li class="ftco-animate"><a href="{% static '#' %}" data-toggle="tooltip" data-placement="top" title="Instagram"><span class="fa fa-instagram"></span></a></li>
+            </ul>
+					</div>
+				</div>
+			</div>
+			<div class="w-100 mt-5 border-top py-5">
+				<div class="container">
+					<div class="row">
+	          <div class="col-md-6 col-lg-8">
+
+	            <p class="copyright mb-0"><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+	  Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is edited by <i class="fa fa-heart" aria-hidden="true"></i> by <a href="{% static '#' %}" target="_blank">2017	EE78	EE25	EE19</a>
+	  <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></p>
+	          </div>
+	          <div class="col-md-6 col-lg-4 text-md-right">
+	          	<p class="mb-0 list-unstyled">
+	          		<a class="mr-md-3" href="{% static '#' %}">Terms</a>
+	          		<a class="mr-md-3" href="{% static '#' %}">Privacy</a>
+	          		<a class="mr-md-3" href="{% static '#' %}">Compliances</a>
+	          	</p>
+	          </div>
+	        </div>
+				</div>
+			</div>
+		</footer>
+    
+  
+
+  <!-- loader -->
+  <div id="ftco-loader" class="show fullscreen"><svg class="circular" width="48px" height="48px"><circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee"/><circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10" stroke="#F96D00"/></svg></div>
+
+
+  <script src="{% static 'js/jquery.min.js' %}"></script>
+  <script src="{% static 'js/jquery-migrate-3.0.1.min.js' %}"></script>
+  <script src="{% static 'js/popper.min.js' %}"></script>
+  <script src="{% static 'js/bootstrap.min.js' %}"></script>
+  <script src="{% static 'js/jquery.easing.1.3.js' %}"></script>
+  <script src="{% static 'js/jquery.waypoints.min.js' %}"></script>
+  <script src="{% static 'js/jquery.stellar.min.js' %}"></script>
+  <script src="{% static 'js/jquery.animateNumber.min.js' %}"></script>
+  <script src="{% static 'js/bootstrap-datepicker.js' %}"></script>
+  <script src="{% static 'js/jquery.timepicker.min.js' %}"></script>
+  <script src="{% static 'js/owl.carousel.min.js' %}"></script>
+  <script src="{% static 'js/jquery.magnific-popup.min.js' %}"></script>
+  <script src="{% static 'js/scrollax.min.js' %}"></script>
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVWaKrjvy3MaE7SQ74_uJiULgl1JY0H2s&sensor=false"></script>
+  <script src="{% static 'js/google-map.js' %}"></script>
+  <script src="{% static 'js/main.js' %}"></script>
+
+    
+    
+  </body>
+</html>

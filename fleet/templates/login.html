@@ -1,0 +1,124 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FMS</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" type="text/css" href="{% static 'css2/bootstrap.min.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css2/fontawesome-all.min.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css2/iofrm-style.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css2/iofrm-theme2.css' %}">
+    
+    <link href="{% static 'https://fonts.googleapis.com/css?family=Poppins:200,300,400,500,600,700,800,900&display=swap' %}" rel="stylesheet">
+    <link href="{% static 'https://fonts.googleapis.com/css?family=Playfair+Display:400,400i,500,500i,600,600i,700,700i&display=swap' %}" rel="stylesheet">
+
+    <link rel="stylesheet" href="{% static 'https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css' %}">
+ 
+    <link rel="stylesheet" href="{% static 'css2/animate.css' %}">
+    
+    <link rel="stylesheet" href="{% static 'css2/owl.carousel.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css2/owl.theme.default.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css2/magnific-popup.css' %}">
+
+    <link rel="stylesheet" href="{% static 'css2/bootstrap-datepicker.css' %}">
+    <link rel="stylesheet" href="{% static 'css2/jquery.timepicker.css' %}">
+
+    <link rel="stylesheet" href="{% static 'css2/flaticon.css' %}">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+  </head>
+  <body>
+		<div class="wrap">
+			<div class="container">
+				<div class="row justify-content-between">
+						<div class="col d-flex align-items-center">
+							<p class="mb-0 phone"><span class="mailus">Phone no:</span> <a href="{% static '#' %}">+92 300 0000000</a> or <span class="mailus">email us:</span> <a href="{% static '#' %}">fms@gmail.com</a></p>
+						</div>
+						<div class="col d-flex justify-content-end">
+							<div class="social-media">
+				    		<p class="mb-0 d-flex">
+				    			
+				    		</p>
+			        </div>
+						</div>
+				</div>
+			</div>
+		</div>
+		<nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
+	    <div class="container">
+	    	<a class="navbar-brand" href="/"><span>FMS</span></a>
+	      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
+	        <span class="fa fa-bars"></span> Menu
+	      </button>
+	      <div class="collapse navbar-collapse" id="ftco-nav">
+	        <ul class="navbar-nav ml-auto">
+	        	<li class="nav-item active"><a href="/" class="nav-link">Home</a></li>
+	        	<li class="nav-item"><a href="/about" class="nav-link">About</a></li>
+				<li class="nav-item"><a href="/services" class="nav-link">Services</a></li>
+			
+			  	<li class="nav-item"><a href="/contact" class="nav-link">Contact</a></li>
+				{% if user.is_authenticated %}
+				<li> Hello, {{user.first_name}} </li>
+                <li class="nav-item"><a href="management" class="nav-link">Management</a></li>
+				<li class="nav-item"><a href="logout" class="nav-link">Log out</a></li>
+				{% else %}
+			  	<li class="nav-item"><a href="login" class="nav-link">Log in</a></li>
+			  	<li class="nav-item"><a href="/register" class="nav-link">Register</a></li>
+			  	{% endif %}
+	        </ul>
+	      </div>
+	    </div>
+	  </nav>
+</head>
+<body>
+    <div class="form-body" class="container-fluid">
+        <div class="website-logo">
+            <a href="index.html">
+                <div class="logo">
+                    <img class="logo-size" src="{% static 'images2/logo-light.svg' %}" alt="">
+                </div>
+            </a>
+        </div>
+        <div class="row">
+            <div class="img-holder">
+                <div class="bg"></div>
+                <div class="info-holder">
+
+                </div>
+            </div>
+            <div class="form-holder">
+                <div class="form-content">
+                    <div class="form-items">
+                        <h3>Welcome back to FMS :)</h3>
+                        <p>Your confidentiality is our first priority.</p>
+                    
+                        <form action="login" method="POST">
+                            {% csrf_token %}
+                            <input class="form-control" type="text" name="user_name" placeholder="Username" required>
+                            <input class="form-control" type="password" name="password" placeholder="Password" required>
+                            <input type="checkbox" id="chk1"><label for="chk1">Remember me</label>
+                            <div class="form-button">
+                                <button id="submit" type="submit" class="ibtn">Login</button>
+                            </div>
+                        </form>
+                       
+                        <div class="other-links">
+                            <span>Or login with</span><a href="#">Facebook</a><a href="#">Google</a><a href="#">Linkedin</a>
+                        </div>
+                        <div> 
+                            {% for message in messages %}
+                            <h4>{{message}}</h4>
+                            {% endfor %}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+<script type="text/javascript" src="{% static 'js2/jquery.min.js' %}"></script>
+<script type="text/javascript" src="{% static 'js2/popper.min.js' %}"></script>
+<script type="text/javascript" src="{% static 'js2/bootstrap.min.js' %}"></script>
+<script type="text/javascript" src="{% static 'js2/main.js' %}"></script>
+</body>
+</html>
